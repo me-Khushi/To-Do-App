@@ -96,11 +96,35 @@ li {
     border-radius: 0.8rem;
 }
 
+li span {
+    flex: 1;
+}
+
 li:hover {
     background-color: rgba(0, 0, 0, 0.3);
     transition: 0.2s;
 }
 
+.delete-btn {
+    background: transparent;
+    border: none;
+    padding: 0.05rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.delete-btn:hover img {
+    opacity: 1;
+}
 
 @media (max-width: 963px) {
     .container {

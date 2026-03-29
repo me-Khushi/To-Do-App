@@ -1,23 +1,37 @@
 let input = document.querySelector("#inputbox");
 let addBtn = document.querySelector("#add-btn");
-let taskList = document.querySelector("#task-list");
+let taskList = document.querySelector("ul");
 
 addBtn.addEventListener("click", () => {
     let task = input.value;
-    let li = document.createElement("li");
     if (task.trim() === "") {
         alert("Please enter a task");
         return;
-    } else {
-        li.textContent = task;
-        taskList.appendChild(li);
-        input.value = "";
     }
+    let li = document.createElement("li");
+    let span = document.createElement("span");
+    span.textContent = task;
+
+    let deleteBtn = document.createElement("button");
+
+    let img = document.createElement("img");
+    img.src = "close.png";
+    img.alt = "Delete";
+    deleteBtn.appendChild(img);
+    deleteBtn.classList.add("delete-btn");
+
+    deleteBtn.addEventListener("click", () => {
+        taskList.removeChild(li);
+    });
+
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
+    input.value = "";
 });
 
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-        console.log(e.key);
         addBtn.click();
     }
 });
