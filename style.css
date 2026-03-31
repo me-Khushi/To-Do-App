@@ -98,6 +98,7 @@ li {
 
 li span {
     flex: 1;
+    cursor:default;
 }
 
 li:hover {
@@ -124,6 +125,11 @@ li:hover {
 
 .delete-btn:hover img {
     opacity: 1;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
 }
 
 @media (max-width: 963px) {

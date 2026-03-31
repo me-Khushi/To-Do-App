@@ -1,6 +1,6 @@
 let input = document.querySelector("#inputbox");
 let addBtn = document.querySelector("#add-btn");
-let taskList = document.querySelector("ul");
+let taskList = document.querySelector("#task-list");
 
 addBtn.addEventListener("click", () => {
     let task = input.value;
@@ -28,6 +28,12 @@ addBtn.addEventListener("click", () => {
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
     input.value = "";
+});
+
+taskList.addEventListener("click", (e) => {
+    if (e.target.tagName === "SPAN") {
+        e.target.classList.toggle("completed");
+    }
 });
 
 input.addEventListener("keydown", (e) => {
